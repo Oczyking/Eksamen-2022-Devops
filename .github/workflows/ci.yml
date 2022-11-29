@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  build_and_test :
+  build_and_unit_test :
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
