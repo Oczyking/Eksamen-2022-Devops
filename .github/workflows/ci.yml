@@ -22,5 +22,6 @@ jobs:
       - name: Build with Maven
         run: mvn --no-transfer-progress -B compile --file pom.xml
         
-      - name: Run Test Suite
-        run: vendor/bin/phpunit
+      - name: Run Unit Test
+        id: unit-tests
+        run: yarn test:jest:ci:coverage
