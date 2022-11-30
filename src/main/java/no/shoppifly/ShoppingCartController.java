@@ -1,12 +1,27 @@
 package no.shoppifly;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import io.micrometer.core.annotation.Timed;
+import io.micrometer.core.instrument.DistributionSummary;
+import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.MeterRegistry;
 
 @RestController()
 public class ShoppingCartController {
+    
+    private Map<String, Item> cartValue = new HashMap();
+    
+    private MeterRegistry meterRegistry;
 
     @Autowired
     private final CartService cartService;
@@ -25,8 +40,11 @@ public class ShoppingCartController {
      *
      * @return an order ID
      */
+    @Timed
     @PostMapping(path = "/cart/checkout")
     public String checkout(@RequestBody Cart cart) {
+        meterRegistry.counter("checkouts").increment();
+        meterRegistry.summary("checkout_latency", checkout(cart)).record(1);
         return cartService.checkout(cart);
     }
 
@@ -36,8 +54,17 @@ public class ShoppingCartController {
      *
      * @return the updated cart
      */
+    @Timed
     @PostMapping(path = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
+        meterRegistry.counter("carts").increment();
+        Gauge.builder("cartsvalue", cartValue, 
+                        b -> b.values()
+                                .stream()
+                                .map(Item::getUnitPrice)
+                                .mapToDouble(Float::floatValue)
+                                .sum())
+                .register(meterRegistry);
         return cartService.update(cart);
     }
 
