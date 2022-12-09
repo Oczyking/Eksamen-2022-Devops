@@ -276,10 +276,29 @@ Beskriv med egne ord;
 
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
   disse? Hvilke DevOps prinsipper blir brutt?
+  
+ Noen av utfordringene vi har når det kommer til den nåværende systemutviklingsprosessen involverer ofte at utviklere jobber på en del av prosessen, mens drift-teamet jobber et annet sted i prosessen. Det kan føre til store kommunikasjonsbrudd, forsinkelser og andre utfordringer kan oppstå. Mangel på samarbeid og koordinering mellom de forskjellige leddene i en bedrift gjør det utrolig vanskelig å levere eller produsere programmer på en rask og effektiv måte.
+Ved innføringen av DevOps prinsipper vil da bidra til å løse disse utfordringene ved å fremme samarbeid og koordinering mellom de forskjellige leddene i en bedrift. Siden DevOps er et sett med praksiser som legger mye vekt på samarbeid, kommunikasjon og integrasjon mellom programvareutvikling og drift-teamet. Ved å implementere så kan bedrifter forbedre sin evne til å levere og produsere programmer på en rask og effektiv måte, og redusere risikoen for forsinkelser eller kommunikasjonsbrudd
+Noen DevOps prinsipper som ofte blir brutt er:
+Automatisering: I dagens systemutviklingsprosess så kan manuelle prosesser og manuelle overleveringer mellom leddene være vanlig, dette kan føre til forsinkelser eller feil. Ved å ta i bruk DevOps så fremmer det bruken av automatisering og reduserer manuelle prosesser og forbedrer hastigheten og påliteligheten til programvareutgivelser.
+Samarbeid: I dagens systemutviklingsprosess så kan det hende leddene ikke jobber tett sammen. Leddene jobber med sitt og ikke tenker så mye på det rundt. Tenker rett og slett å gjøre jobben siden og ferdig. Istedenfor å vite at det er mye mer rundt å tenke på å. Ved å ta i bruk DevOps så vil samarbeid mellom de forskjellige leddene bli mye bedre i forhold til kommunikasjon og koordinering.
+Kontinuerlig integrasjon og levering I den nåværende systemutviklingsprosessen så kan det hende at leddene ikke integrerer arbeidet sitt regelmessig eller utgir programvaren ofte. DevOps fremmer da kontinuerlig integrasjon og levering for å gjøre det mulig for bedriftene til å levere o produsere programvare rasket og effektivt.
+Målinger: I systemutviklingsprosessen så kan det hende at flere bedrifter ikke har team som har tilgang til betegnelser og data som kan hjelpe dem til å forstå ytelsen av programvaren de har laget. Ved DevOps så fremmer det bruken av betegnelser og data på de forskjellige programvarene som de lager. 
+
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
-* Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
+
+Et problem med denne tilnærmingen er at det kan bremse utgivelsesprosessen og hindre muligheten til å svare raskt på endrende forretningsbehov. Siden i en DevOps tilnærming er målet å skape en rask feedback mellom utvikling og drift, slik at feil og problemer kan oppdages og løses raskt. Dette innebærer da ofte automatisering av test og distribusjon prosessen, samt integrering av QA og drift teamene tettere. Dette gir muligheten for hyppige, mindre utgivelser som kan gjøres med tillit og kan raskt rulles tilbake om nødvendig. I stedet for å prøve å kontrollere og redusere feil, så kan en bedre tilnærming være å fokusere på å oppdage og fikse feil raskt og effektiv
+
+* Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?
+
+Utfordringen ved å levere kode over til en annen avdeling ut i fra DevOps perspektiv er at det kan skape en frakobling mellom temaet som utvikler koder og teamet som er ansvarlig for å kjøre det ut i produksjon. Ved å utlevere kode kan føre til store misforståelser og feilkommunikasjon som til slutt føre til forsinkelser eller at koden ikke funker som den egentlig skal.
+De gevinstene vi kan få ved et team har både ansvar for drift og utvikling så kan teamet sikre en bedre forståelse av koden og hva den er ment til å gjøre. Det kan også føre til økt kommunikasjon og samarbeid mellom teamene, som til slutt fører til mer effektive utviklings og drift prosesser. Ved å la utviklingsteamet være mer ansvarlig for driften kan bidra til at koden er designet og implementert på en måte som gjøre det lettere å administrere og vedlikeholde. Gjøre også ting lettere å distribuere ny kode og funksjoner med hverandre.
+
+
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
+  
+ Det å release kode ofte kan forårsake flere bugs som koden du releaste lagde eller ødelegger en funksjon som fungerte fint før du releaste den nye koden. Noen metoder som vi kan implementere ved hjelp av DevOps prinsippene er automatisering og kontinuerlig testing. Ved å automatisere release prosessen så kan vi sikre oss all kodeendring blir sendt igjennom en streng testprosess, noe som da reduserer sannsynligheten for feil eller ødelegge fungerende kode. Ved å kjøre kontinuerlig testing så kan vi kjøre tester som kjører hver gang det skjer en kodeendring slik at vi kan raskt identifisere eller fikse problemet før vi releaser det. Vi har også gjennom github skrudd på sikkerhet, hvor du må en annen person til å se på hva du har gjort og godkjenne det før det blir pushet opp til main. Ved å gjøre dette så kan det også redusere feil eller at funksjonell kode blir ødelagt.
 
 ## Del 2 - CI
 
