@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "analytics-1042"
-    key    = "malo050/eksamen-2022.state"
+    key    = "malo/eksamen-2022.state"
     region = "eu-west-1"
   }
 }
