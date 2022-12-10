@@ -351,7 +351,16 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 ### Oppgave 1
 
-Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
+Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen?
+Det du må gjøre for å få workflowen til å fungere med din Dockerhub konto er å ordne på varibalene som den magler i docker .github/workflows/docker.yml.
+
+``` 
+ username: ${{ secrets.DOCKER_HUB_USERNAME }}
+ password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+```
+
+For sikkerthetsskyld så er det lurt å ordne dette i secrest i github. Siden ved å gjøre det så vet workflows at det er Docker bruker navnet og Docker Token som du får på Docker hub. Du kan ordne githib secrets vet å gå inn på settings/secrets/actions og så legge til en ny secret. Det er viktig at variabel navnet stemmer med det du har i yml filen slik at github vet hva secreten er.
 
 ### Oppgave 2
 
