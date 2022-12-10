@@ -16,8 +16,8 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: eu-west-1
-      CANDIDATE_ID: = 1042
-      CANDIDATE_EMAIL: = malo050@student.kristiania.no
+      CANDIDATE_ID: 1042
+      CANDIDATE_EMAIL: malo050@student.kristiania.no
     steps:
       - name: Checkout
         uses: actions/checkout@v3
