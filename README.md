@@ -331,6 +331,18 @@ at
 * Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 * Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
+Branch protection og status sjekker kan du gjøre gjennom gitgub og setting.
+
+Det sensor må gjøre for å ordne branch protection og at statusen sjekkes er å gå igjennom disse stegene:
+* Først må du forke dette repoet
+* Så går du inn på Settings inni repoet og finner Branches
+* Når du er inni Setting/Bramches så skla du finne Branch Protection og velge add
+* Så velger du require a pull request before merging
+* Så velger du Require status check to pass before merging
+* Så velger du Do not allow bypassing the above settings
+
+Når du har fått laget denne branch protection så kan du ikke merge til main uten at status sjekkes og at den er ok i tillegg så kan ingen i temaet kan komme seg unna med å bare commite koden rett til main, til og med ikke admin kan det.
+
 ## Del 3 - Docker
 
 Applikasjonen er laget for å pushe et container image til Docker Hub. 
