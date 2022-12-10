@@ -456,6 +456,9 @@ De kommenterte derfor bare ut S3 bucket koden, og gikk videre til neste oppgave.
 Se på ```provider.tf filen```. 
 
 * Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
+
+Årsaken tll at denne feil meldingen skjer er at Terraform koden prøver å lage en ny bucket uten at den vet at bucketen allerde eksisterer. Siden terraform koden gjør at Terraform prøver å lage en bucket uten at den er klar over at Bucketen allerde er lagd. Så kort oppsummert så er at Terraform prøver å lage en ny Bucket uten at den er klar over det. Siden kan hende Bucketen har blitt lagd manuell så når vi kjører koden så vet ikke Terraform at den allerde eksiterer. Får å ordne dette å må vi ordne på konfigurasjonen på terraform slik at den ikke prøver å lage en ny en hvis den allerde eksisterer.
+
 * Gjør nødvendige Endre slik denne slik at Terraform kan kjøres flere ganger uten å forsøke å opprette ressurser hver gang den kjører.
 * Fjern kommentarene fra ```databacket.tf``` slik at Terraform-koden  også lager en S3 bucket. 
 
