@@ -276,10 +276,29 @@ Beskriv med egne ord;
 
 * Hva er utfordringene med dagens systemutviklingsprosess - og hvordan vil innføring av DevOps kunne være med på å løse
   disse? Hvilke DevOps prinsipper blir brutt?
+  
+ Noen av utfordringene vi har når det kommer til den nåværende systemutviklingsprosessen involverer ofte at utviklere jobber på en del av prosessen, mens drift-teamet jobber et annet sted i prosessen. Det kan føre til store kommunikasjonsbrudd, forsinkelser og andre utfordringer kan oppstå. Mangel på samarbeid og koordinering mellom de forskjellige leddene i en bedrift gjør det utrolig vanskelig å levere eller produsere programmer på en rask og effektiv måte.
+Ved innføringen av DevOps prinsipper vil da bidra til å løse disse utfordringene ved å fremme samarbeid og koordinering mellom de forskjellige leddene i en bedrift. Siden DevOps er et sett med praksiser som legger mye vekt på samarbeid, kommunikasjon og integrasjon mellom programvareutvikling og drift-teamet. Ved å implementere så kan bedrifter forbedre sin evne til å levere og produsere programmer på en rask og effektiv måte, og redusere risikoen for forsinkelser eller kommunikasjonsbrudd
+Noen DevOps prinsipper som ofte blir brutt er:
+Automatisering: I dagens systemutviklingsprosess så kan manuelle prosesser og manuelle overleveringer mellom leddene være vanlig, dette kan føre til forsinkelser eller feil. Ved å ta i bruk DevOps så fremmer det bruken av automatisering og reduserer manuelle prosesser og forbedrer hastigheten og påliteligheten til programvareutgivelser.
+Samarbeid: I dagens systemutviklingsprosess så kan det hende leddene ikke jobber tett sammen. Leddene jobber med sitt og ikke tenker så mye på det rundt. Tenker rett og slett å gjøre jobben siden og ferdig. Istedenfor å vite at det er mye mer rundt å tenke på å. Ved å ta i bruk DevOps så vil samarbeid mellom de forskjellige leddene bli mye bedre i forhold til kommunikasjon og koordinering.
+Kontinuerlig integrasjon og levering I den nåværende systemutviklingsprosessen så kan det hende at leddene ikke integrerer arbeidet sitt regelmessig eller utgir programvaren ofte. DevOps fremmer da kontinuerlig integrasjon og levering for å gjøre det mulig for bedriftene til å levere o produsere programvare rasket og effektivt.
+Målinger: I systemutviklingsprosessen så kan det hende at flere bedrifter ikke har team som har tilgang til betegnelser og data som kan hjelpe dem til å forstå ytelsen av programvaren de har laget. Ved DevOps så fremmer det bruken av betegnelser og data på de forskjellige programvarene som de lager. 
+
 * En vanlig respons på mange feil under release av ny funksjonalitet er å gjøre det mindre hyppig, og samtidig forsøke å legge på mer kontroll og QA. Hva er problemet med dette ut ifra et DevOps perspektiv, og hva kan være en bedre tilnærming?
-* Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling? 
+
+Et problem med denne tilnærmingen er at det kan bremse utgivelsesprosessen og hindre muligheten til å svare raskt på endrende forretningsbehov. Siden i en DevOps tilnærming er målet å skape en rask feedback mellom utvikling og drift, slik at feil og problemer kan oppdages og løses raskt. Dette innebærer da ofte automatisering av test og distribusjon prosessen, samt integrering av QA og drift teamene tettere. Dette gir muligheten for hyppige, mindre utgivelser som kan gjøres med tillit og kan raskt rulles tilbake om nødvendig. I stedet for å prøve å kontrollere og redusere feil, så kan en bedre tilnærming være å fokusere på å oppdage og fikse feil raskt og effektiv
+
+* Teamet overleverer kode til en annen avdelng som har ansvar for drift - hva er utfordringen med dette ut ifra et DevOps perspektiv, og hvilke gevinster kan man få ved at team han ansvar for både drift- og utvikling?
+
+Utfordringen ved å levere kode over til en annen avdeling ut i fra DevOps perspektiv er at det kan skape en frakobling mellom temaet som utvikler koder og teamet som er ansvarlig for å kjøre det ut i produksjon. Ved å utlevere kode kan føre til store misforståelser og feilkommunikasjon som til slutt føre til forsinkelser eller at koden ikke funker som den egentlig skal.
+De gevinstene vi kan få ved et team har både ansvar for drift og utvikling så kan teamet sikre en bedre forståelse av koden og hva den er ment til å gjøre. Det kan også føre til økt kommunikasjon og samarbeid mellom teamene, som til slutt fører til mer effektive utviklings og drift prosesser. Ved å la utviklingsteamet være mer ansvarlig for driften kan bidra til at koden er designet og implementert på en måte som gjøre det lettere å administrere og vedlikeholde. Gjøre også ting lettere å distribuere ny kode og funksjoner med hverandre.
+
+
 * Å release kode ofte kan også by på utfordringer. Beskriv hvilke- og hvordan vi kan bruke DevOps prinsipper til å redusere
   eller fjerne risiko ved hyppige leveraner.
+  
+ Det å release kode ofte kan forårsake flere bugs som koden du releaste lagde eller ødelegger en funksjon som fungerte fint før du releaste den nye koden. Noen metoder som vi kan implementere ved hjelp av DevOps prinsippene er automatisering og kontinuerlig testing. Ved å automatisere release prosessen så kan vi sikre oss all kodeendring blir sendt igjennom en streng testprosess, noe som da reduserer sannsynligheten for feil eller ødelegge fungerende kode. Ved å kjøre kontinuerlig testing så kan vi kjøre tester som kjører hver gang det skjer en kodeendring slik at vi kan raskt identifisere eller fikse problemet før vi releaser det. Vi har også gjennom github skrudd på sikkerhet, hvor du må en annen person til å se på hva du har gjort og godkjenne det før det blir pushet opp til main. Ved å gjøre dette så kan det også redusere feil eller at funksjonell kode blir ødelagt.
 
 ## Del 2 - CI
 
@@ -312,6 +331,18 @@ at
 * Kode kan merges til main branch ved å lage en Pull request med minst en godkjenning
 * Kode kan merges til main bare når feature branchen som pull requesten er basert på, er verifisert av GitHub Actions.
 
+Branch protection og status sjekker kan du gjøre gjennom gitgub og setting.
+
+Det sensor må gjøre for å ordne branch protection og at statusen sjekkes er å gå igjennom disse stegene:
+* Først må du forke dette repoet
+* Så går du inn på Settings inni repoet og finner Branches
+* Når du er inni Setting/Bramches så skla du finne Branch Protection og velge add
+* Så velger du require a pull request before merging
+* Så velger du Require status check to pass before merging
+* Så velger du Do not allow bypassing the above settings
+
+Når du har fått laget denne branch protection så kan du ikke merge til main uten at status sjekkes og at den er ok i tillegg så kan ingen i temaet kan komme seg unna med å bare commite koden rett til main, til og med ikke admin kan det.
+
 ## Del 3 - Docker
 
 Applikasjonen er laget for å pushe et container image til Docker Hub. 
@@ -320,7 +351,16 @@ Det ligger en ```Dockerfile``` i prosjektet, og en workflow fil som heter ```doc
 
 ### Oppgave 1
 
-Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen? 
+Beskriv hva du må gjøre for å få workflow til å fungere med din DockerHub konto? Hvorfor feiler workflowen?
+Det du må gjøre for å få workflowen til å fungere med din Dockerhub konto er å ordne på varibalene som den magler i docker .github/workflows/docker.yml.
+
+``` 
+ username: ${{ secrets.DOCKER_HUB_USERNAME }}
+ password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+```
+
+For sikkerthetsskyld så er det lurt å ordne dette i secrest i github. Siden ved å gjøre det så vet workflows at det er Docker bruker navnet og Docker Token som du får på Docker hub. Du kan ordne githib secrets vet å gå inn på settings/secrets/actions og så legge til en ny secret. Det er viktig at variabel navnet stemmer med det du har i yml filen slik at github vet hva secreten er.
 
 ### Oppgave 2
 
@@ -363,6 +403,15 @@ Et privat ECR repository i AWS er en bedre løsning.
 * Lag dit eget ECR repository med kandidatnummer som navn, enten ved hjelp av UI - eller ved hjelp av CLI.
 * Endre ```docker.yml```, workflow til å pushe docker container til Amazon ECR, istedet for docker hub
 * Beskriv deretter med egne ord hva sensor må gjøre for å få sin fork til å laste opp container image til sitt eget ECR repo.
+
+Det senor må gjøre får å lastet opp container image til sitt eget repo er å skrive noen commands i komando linja slik at du kan pushe container image til sitt eget repo. De komandoene som du må skrive inn er
+```
+docker build -t <ditt tagnavn> .
+docker tag <ditt tagnavn> 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<ditt ECR repo navn>
+docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/<ditt ECR repo navn>
+```
+Når du har gjort dette så har du fått pushet opp et container image til sitt eget ECR repo
+
 * Docker workflow skal pushe et container image med en tag som er lik GitHub commit hash (id); for eksempel ```244530008913.dkr.ecr.eu-west-1.amazonaws.com/glenn_exam_practice:8234efc```
 
 ## Del 4 - Metrics, overvåkning og alarmer
@@ -407,6 +456,9 @@ De kommenterte derfor bare ut S3 bucket koden, og gikk videre til neste oppgave.
 Se på ```provider.tf filen```. 
 
 * Forklar med egne ord. Hva er årsaken til dette problemet? Hvorfor forsøker Terraform å opprette en bucket, når den allerede eksisterer? 
+
+Årsaken tll at denne feil meldingen skjer er at Terraform koden prøver å lage en ny bucket uten at den vet at bucketen allerde eksisterer. Siden terraform koden gjør at Terraform prøver å lage en bucket uten at den er klar over at Bucketen allerde er lagd. Så kort oppsummert så er at Terraform prøver å lage en ny Bucket uten at den er klar over det. Siden kan hende Bucketen har blitt lagd manuell så når vi kjører koden så vet ikke Terraform at den allerde eksiterer. Får å ordne dette å må vi ordne på konfigurasjonen på terraform slik at den ikke prøver å lage en ny en hvis den allerde eksisterer.
+
 * Gjør nødvendige Endre slik denne slik at Terraform kan kjøres flere ganger uten å forsøke å opprette ressurser hver gang den kjører.
 * Fjern kommentarene fra ```databacket.tf``` slik at Terraform-koden  også lager en S3 bucket. 
 
