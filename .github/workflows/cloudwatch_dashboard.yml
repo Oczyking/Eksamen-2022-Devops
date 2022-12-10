@@ -1,15 +1,12 @@
 name: "Terraform CloudWatch"
-
+defaults:
+  run:
+    working-directory: infra
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    
-defaults:
-  run:
-    shell: bash
-    working-directory: ./infra
     
 jobs:
   terraform:
