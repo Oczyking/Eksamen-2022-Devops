@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.micrometer.core.annotation.Timed;
 import io.micrometer.core.instrument.Gauge;
 import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Tags;
 
 @RestController()
 public class ShoppingCartController {
@@ -44,7 +45,7 @@ public class ShoppingCartController {
     @PostMapping(path = "/cart/checkout")
     public String checkout(@RequestBody Cart cart) {
         meterRegistry.counter("checkouts").increment();
-        meterRegistry.summary("checkout_latency", checkout(cart)).record(1);
+        meterRegistry.summary("checkout_latency", Tags.of("region", "eu-west-1")).record(1);
         return cartService.checkout(cart);
     }
 
