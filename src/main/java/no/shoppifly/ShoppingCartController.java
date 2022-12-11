@@ -20,6 +20,7 @@ public class ShoppingCartController {
     
     private Map<Cart, Item> cartValue = new HashMap();
     
+    @Autowired
     private MeterRegistry meterRegistry;
 
     @Autowired
@@ -53,10 +54,15 @@ public class ShoppingCartController {
      *
      * @return the updated cart
      */
-    @Timed
-    @PostMapping(path = "/cart")
+    @Timed(value = "carts")
+    @PostMapping(path = "/cart", value = "/cart")
     public Cart updateCart(@RequestBody Cart cart) {
         meterRegistry.counter("carts").increment();
+        
+        for (Item item : cart.getItems()) {
+        cartValue.put(cart, item);
+    }
+        
         Gauge.builder("cartsvalue", cartValue, 
                         b -> b.values()
                                 .stream()
@@ -64,6 +70,7 @@ public class ShoppingCartController {
                                 .mapToDouble(Float::floatValue)
                                 .sum())
                 .register(meterRegistry);
+                
         return cartService.update(cart);
     }
 
