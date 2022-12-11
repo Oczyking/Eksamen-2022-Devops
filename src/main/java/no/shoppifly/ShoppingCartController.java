@@ -18,7 +18,7 @@ import io.micrometer.core.instrument.MeterRegistry;
 @RestController()
 public class ShoppingCartController {
     
-    private Map<String, Item> cartValue = new HashMap();
+    private Map<Cart, Item> cartValue = new HashMap();
     
     private MeterRegistry meterRegistry;
 
